@@ -5,7 +5,13 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-
+	<style type="text/css">
+		button{
+			background-color: transparent;
+			border-color: red;
+			font-size: x-large;
+		}
+	</style>
 	<body background="img/1.jpg">
 		<center>
 			<h1>欢迎来到我的世界，有你有我</h1>
@@ -16,6 +22,7 @@
 				function myFunction() {
 					x = document.getElementById("demo"); // 找到元素
 					x.innerHTML = "其实我想说你，你是不是傻。。。"; // 改变内容
+					x.style.color = "green";
 				}
 
 				function changeImage() {
@@ -26,11 +33,25 @@
 						element.src = "img/pic_bulbon.jpg";
 					}
 				}
+
+				function myFunction1() {
+					var y = document.getElementById("demo1");
+					var x = y.value;
+					if(x == "" || isNaN(x)) {
+						y.value = "请输入纯数字";
+						y.style.color = "orangered";
+						y.style.fontWeight = "bold";
+					}
+				}
 			</script>
-			<button type="button" onclick="myFunction()" style="background-color: transparent;border-color: aquamarine;font-size: x-large;">点击这里</button>
+			<button type="button" onclick="myFunction()">点击这里</button>
 			<img id="myimage" onclick="changeImage()" src="img/pic_bulbon.jpg" width="120" height="180">
 			<p>点击灯泡就可以打开或关闭这盏灯</p>
+			<input type="text" id="demo1" value="hah" />
+			<button type="button" onclick="myFunction1()">点击这里</button>
+			<p id="demo2">一个段落</p>
+			<button type="button" onclick="myFunction2()">点击myJavaScript</button>
+			<script type="text/javascript" src="js/myScript.js"></script>
 		</center>
 	</body>
-
 </html>
