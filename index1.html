@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
 	<link rel="stylesheet" type="text/css" href="css/myCss.css">
 	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript">
+		function checkboxed(objName) {
+			var objNameList = document.getElementsByName(objName);
+			if(null != objNameList) {
+				alert("全选操作");
+				for(var i = 0; i < objNameList.length; i++) {
+					objNameList[i].checked = "checked";
+				}
+			}
+		}
+
+		function uncheckboxed(objName) {
+			var objNameList = document.getElementsByName(objName);
+			if(null != objNameList) {
+				alert("取消全选操作");
+				for(var i = 0; i < objNameList.length; i++) {
+					objNameList[i].checked = "";
+				}
+			}
+		}
+		var checkAll = false;
+
+		function allcheck() {
+			checkAll = !checkAll;
+			let inputs = document.getElementsByName('checkbox')
+			for(var i = 0; i < inputs.length; i++) {
+				inputs[i].checked = checkAll
+			}
+		}
+	</script>
+
 	<body background="img/1.jpg">
 		<center>
 			<h1>欢迎来到我的世界，有你有我</h1>
@@ -22,7 +54,14 @@
 			<p id="demo3">想看里边内容请点击以下按钮</p>
 			<button type="button" onclick="myFunction4()">点击我</button>
 			<p id="demo4">想看里边内容请点击以下按钮</p>
-			<button type="button" onclick="myFunction6()">点击我获取基本额度</button>
+			<button type="button" onclick="myFunction6()">点击我获取基本额度</button> <br> 看书：
+			<input type="checkbox" name="checkbox" value=1><br> 写字：
+			<input type="checkbox" name="checkbox" value=2><br> 打飞机：
+			<input type="checkbox" name="checkbox" value=3><br> 玩游戏：
+			<input type="checkbox" name="checkbox" value=4><br>
+			<button onclick="checkboxed('checkbox')">全选</button>
+			<button onclick="uncheckboxed('checkbox')">取消全选</button>
+			<button onclick="allcheck()">全选/取消</button>
 		</center>
 	</body>
 

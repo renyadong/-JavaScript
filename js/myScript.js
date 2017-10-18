@@ -5,12 +5,12 @@ function myFunction1() {
 		y.value = "是不是傻，输入数字，乖啦！";
 		y.style.color = "orangered";
 		y.style.fontWeight = "bold";
-		y.style.fontSize="x-large"
-	}else{
+		y.style.fontSize = "x-large"
+	} else {
 		y.value = "谁让你输入数字的，瞎整";
 		y.style.color = "orangered";
 		y.style.fontWeight = "bold";
-		y.style.fontSize="x-large"
+		y.style.fontSize = "x-large"
 	}
 }
 
