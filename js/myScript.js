@@ -44,7 +44,7 @@ function myFunction5() {
 			return a + b;
 		}
 	};
-	return "员工编号为：" + people.id + "，姓名为：" + people.name + "，年龄为：" + people.age + "，住址为：" + people.address + "，基本额度为：" + people.amount();
+	return "员工编号为：" + people.id + "，姓名为：" + people["name"] + "，年龄为：" + people.age + "，住址为：" + people.address + "，基本额度为：" + people.amount();
 }
 
 function myFunction6() {
