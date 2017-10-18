@@ -2,9 +2,15 @@ function myFunction1() {
 	var y = document.getElementById("demo1");
 	var x = y.value;
 	if(x == "" || isNaN(x)) {
-		y.value = "请输入纯数字";
+		y.value = "是不是傻，输入数字，乖啦！";
 		y.style.color = "orangered";
 		y.style.fontWeight = "bold";
+		y.style.fontSize="x-large"
+	}else{
+		y.value = "谁让你输入数字的，瞎整";
+		y.style.color = "orangered";
+		y.style.fontWeight = "bold";
+		y.style.fontSize="x-large"
 	}
 }
 
@@ -22,7 +28,8 @@ function myFunction3(a, b) {
 function myFunction4() {
 	x = document.getElementById("demo3"); // 找到元素
 	x.innerHTML = myFunction3("2017-10-18", "在人民大会堂召开十九大会议"); // 改变内容
-	x.style.color = "lightcoral";
+	x.style.color = "browns";
+	x.style.fontWeight = "bolder";
 }
 
 function myFunction5() {
