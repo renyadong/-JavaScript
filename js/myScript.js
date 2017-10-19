@@ -80,9 +80,13 @@ function myFunction7() {
 			y.innerHTML = "年龄太小";
 			y.style.color = "red";
 			y.style.fontWeight = "bolder";
-		} else {
+		} else if(x.value >=18 && x.value <= 65){
 			y.innerHTML = "符合投票年龄";
 			y.style.color = "green";
+			y.style.fontWeight = "bolder";
+		}else{
+			y.innerHTML = "年龄太大";
+			y.style.color = "orange";
 			y.style.fontWeight = "bolder";
 		}
 	} else {
