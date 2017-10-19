@@ -70,3 +70,24 @@ function changeImage() {
 		element.src = "img/pic_bulbon.jpg";
 	}
 }
+
+function myFunction7() {
+	var x = document.getElementById("demo5");
+	var y = document.getElementById("demo6");
+	if(x.value != "" && !isNaN(x.value)) {
+		if(x.value < 18) {
+			//		element.getElementById("demo6").value = "年龄太小";
+			y.innerHTML = "年龄太小";
+			y.style.color = "red";
+			y.style.fontWeight = "bolder";
+		} else {
+			y.innerHTML = "符合投票年龄";
+			y.style.color = "green";
+			y.style.fontWeight = "bolder";
+		}
+	} else {
+		x.value = "请输入纯数字"
+		x.style.color = "red";
+		x.style.fontWeight = "bolder";
+	}
+}
