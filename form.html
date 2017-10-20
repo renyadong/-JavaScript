@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<form action="demo_form.php" method="post" name="fm" onsubmit="return validateForm()">
+			<table border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<th colspan="2" id="title">表单验证</th>
+				</tr>
+				<tr>
+					<td>姓名：</td>
+					<td><input type="text" id="fname" value="" onchange="validateName()"/></td>
+					<td id="fname1"></td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td><input type="password" id="fpassword" value="" onchange="validatePassWord()" /></td>
+					<td id="fpassword1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td colspan="2"><input type="submit" value="提交" id="submit" /></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+	<script type="text/javascript" src="js/form.js"></script>
+</html>

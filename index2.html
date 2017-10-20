@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/myScript1.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<form name="myform" action="" onsubmit="return fun1()">
+			<div align="center">
+				<table border="1" width="60%">
+					<tr>
+						<td colspan=2 align=center>
+							<h3>学生信息管理</h3></td>
+					</tr>
+					<tr>
+						<td height="39" width="463" bgcolor="#006699">
+							<font color="#FFFF00">
+								学生编号：<input type="text" maxlength=10 id="sno" value="12345678">(8位数字)</td>
+
+						<td height="39" width="463" bgcolor="#006699">
+							<font color="#FFFF00">
+								学生名字：<input type="text" maxlength=10 id="username" value="刘训">(中文)</td>
+
+						<tr>
+							<td height="39" width="463" bgcolor="#006699">
+								<font color="#FFFF00">
+									邮箱地址：<input type="text" maxlength=10 id="email" value="1056125478@qq.com"></td>
+
+							<td height="39" width="463" bgcolor="#006699">
+								<font color="#FFFF00">
+									电话号码：<input type="text" maxlength=11 id="tel" value="15574074751"></td>
+
+							<tr>
+								<td height="53" width="985" bgcolor="#006699" colspan="2" align=center>
+									<input type="submit" value="使用submit按钮提交表单">
+								</td>
+							</tr>
+				</table>
+			</div>
+			<center>
+				<p>请输出一个 5 到 10 之间的数字:</p>
+				<input id="demo" type="text">
+				<button type="button" onclick="myFunction()">测试输入</button>
+				<p id="message" align="center"></p>
+				<p id="demo1"></p>
+				<p>开启调试工具，在代码执行到第三行前会停止执行。</p>
+				<script>
+					var x = 15 * 5;
+					debugger;
+					document.getElementById("demo1").innerHTML = x;
+				</script>
+				<h2>全局 "use strict" 声明.</h2>
+				<p>浏览器按下 F12 开启调试模式，查看报错信息。</p>
+				<script>
+					"use strict";//只在函数内部使用严格模式-起作用
+					myFunction(1,2);
+					function myFunction(a,b) {
+						var a = 1;
+					}
+				</script>
+			</center>
+	</body>
+</html>
