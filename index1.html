@@ -62,8 +62,49 @@
 			<button onclick="checkboxed('checkbox')">全选</button>
 			<button onclick="uncheckboxed('checkbox')">取消全选</button>
 			<button onclick="allcheck()">全选/取消</button><br />
-			<input type="text" name="" id="demo5"/><h3 id="demo6">输入自己年龄查看自己是否符合投票年龄</h3>
+			<input type="text" name="" id="demo5" />
+			<h3 id="demo6">输入自己年龄查看自己是否符合投票年龄</h3>
 			<button type="button" onclick="myFunction7()">点击查看自己年龄状态</button> <br>
+			<p>输入数字并点击验证按钮:</p>
+
+			<input id="id1" type="number" min="100" max="300" required>
+			<button onclick="myFunction1()">验证</button>
+
+			<p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+
+			<p id="demo7"></p>
+			<p>输入数字并点击验证按钮:</p>
+			
+			<p>输入数字并点击验证按钮:</p>
+			<input id="id2" type="number" min="100" max="300" required>
+			<button onclick="myFunction2()">验证</button>
+			<p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+			<p id="demo8"></p>
+			<script>
+				function myFunction1() {
+					var inpObj = document.getElementById("id1");
+					if(inpObj.checkValidity() == false) {
+						document.getElementById("demo7").innerHTML = inpObj.validationMessage;
+					} else {
+						document.getElementById("demo7").innerHTML = "输入正确";
+					}
+				}
+
+				function myFunction2() {
+					var inpObj = document.getElementById("id2");
+					inpObj.setCustomValidity(''); // 取消自定义提示的方式
+					if(inpObj.checkValidity() == false) {
+						if(inpObj.value == "") {
+							inpObj.setCustomValidity("不能为空！");
+						} else if(inpObj.value < 100 || inpObj.value > 300) {
+							inpObj.setCustomValidity("请重新输入数值（100~300之间）!");
+						}
+						document.getElementById("demo8").innerHTML = inpObj.validationMessage;
+					} else {
+						document.getElementById("demo8").innerHTML = "输入正确";
+					}
+				}
+			</script>
 		</center>
 	</body>
 
