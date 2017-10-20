@@ -98,6 +98,7 @@
 							inpObj.setCustomValidity("不能为空！");
 						} else if(inpObj.value < 100 || inpObj.value > 300) {
 							inpObj.setCustomValidity("请重新输入数值（100~300之间）!");
+							alert(inpObj.validationMessage);
 						}
 						document.getElementById("demo8").innerHTML = inpObj.validationMessage;
 					} else {
