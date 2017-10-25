@@ -1,35 +1,103 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<style type="text/css">
-		input {
-			background-color: lightsalmon;
-			font-family: 'arial black';
-			font-size: x-large;
-			color:crimson;
-			font-weight: bolder;
-			}
-	</style>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-	<body background="img/1.jpg">
-		<center>
-			<h1>欢迎来到我的个人网页</h1>
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td><input type="button" name="" id="" value="打开百度"  onclick="window.open('http://www.baidu.com')" /></td>
-					<td><input type="button" name="" id="" value="郝美丽专属按钮" onclick="fun()" /></td>
-					<td><input type="button" name="" id="" value="进入淘宝" onclick="window.open('https://www.taobao.com')" /></td>
-					<td><input type="button" name="" id="" value="进入京东" onclick="window.open('https://www.jd.com/?cu=true&utm_source=haosou-search&utm_medium=cpc&utm_campaign=t_262767352_haosousearch&utm_term=5512152820_0_3dbc895ca46044a69d796aeb482c67ab')" /></td>
-				</tr>
-			</table>
-		</center>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jquery+html5烂漫爱心表白动画 - 站长素材</title>
+
+		<style type="text/css">
+			@font-face {
+				font-family: digit;
+				src: url('digital-7_mono.ttf') format("truetype");
+			}
+		</style>
+
+		<link href="css/default.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/garden.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="mainDiv">
+			<div id="content">
+				<div id="code">
+					<span class="comments">/**</span><br />
+					<span class="space" /><span class="comments">*2016—02-14,</span><br />
+					<span class="space" /><span class="comments">*2016-02-28.</span><br />
+					<span class="space" /><span class="comments">*/</span><br /> <span class="boy">Boy's name is </span></span><span class="keyword">Mr</span> <span class="fisrtname">REN</span><br /> <span class="girl">Girl's name is </span><span class="keyword">Mrs</span> <span class="fisrtname">HAO</span><br />
+					<span class="comments">// Fall in love river. </span><br /> <span class="boy">The boy love the girl;</span><br />
+					<span class="comments">// It's sad.</span><br /> <span class="girl">But,the girl doesn't love the boy;</span><br />
+					<span class="comments">// AS time goes on.</span><br /> <span class="boy1">Although,the girl like refusing the boy, he can not be separated the girl;</span><br />
+					<span class="comments">// At the same time.</span><br /><span class="girl1"> The girl can not be separated the boy;</span><br />
+					<span class="comments">// Both wind and snow all over the sky.</span><br />
+					<span class="comments">// Whether on foot or 5 kilometers.</span><br />
+					<span class="girl2">The boy is very</span> <span class="boy2">disappointed,but he persist in liking her and doesn't' plan to giving her;</span>;<br />
+					<span class="boy2">The girl is very</span> <span class="girl2">happy</span>;<br />
+					<span class="placeholder" /><span class="comments">// Whether it is right now</span><br />
+					<span class="placeholder" /><span class="comments">// Still in the distant future.</span><br />
+					<span class="placeholder" /><span class="boy3">The boy has but one dream;</span><br />
+					<span class="comments">// The boy hopes that the girl is happy and lives a happy and pleasant life.</span><br />
+					<br>
+					<br><span class="boy4"> I want to say:</span><br /><span class="boy3"> Baby, I love you forever;</span><br />
+				</div>
+				<div id="loveHeart">
+					<canvas id="garden"></canvas>
+					<div id="words">
+						<div id="messages">
+							亲爱的，真心希望能和你在一起。
+							<div id="elapseClock"></div>
+						</div>
+						<div id="loveu">
+							爱你直到永永远远。<br/>
+							<div class="signature">- REN先生</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var offsetX = $("#loveHeart").width() / 2;
+			var offsetY = $("#loveHeart").height() / 2 - 55;
+			var together = new Date();
+			together.setFullYear(2013, 2, 28);
+			together.setHours(20);
+			together.setMinutes(0);
+			together.setSeconds(0);
+			together.setMilliseconds(0);
+
+			if(!document.createElement('canvas').getContext) {
+				var msg = document.createElement("div");
+				msg.id = "errorMsg";
+				msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+				document.body.appendChild(msg);
+				$("#code").css("display", "none")
+				$("#copyright").css("position", "absolute");
+				$("#copyright").css("bottom", "10px");
+				document.execCommand("stop");
+			} else {
+				setTimeout(function() {
+					startHeartAnimation();
+				}, 5000);
+
+				timeElapse(together);
+				setInterval(function() {
+					timeElapse(together);
+				}, 500);
+
+				adjustCodePosition();
+				$("#code").typewriter();
+			}
+		</script>
+		<!--<div style="text-align:center;clear:both">
+			<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+			<p>来源：
+				<a href="http://sc.chinaz.com/" target="_blank">站长素材</a>
+			</p>
+		</div>-->
 	</body>
-	<script type="text/javascript">
-		function fun() {
-			alert("郝美丽，你是不是傻。。。。。。。");
-		}
-	</script>
+
 </html>
