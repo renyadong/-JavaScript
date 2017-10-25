@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<button id="button1" onclick="fun1()">点我添加一列</button>
+		</div>
+		<script>
+			function fun1() {
+				var input1 = document.createElement("input");
+				input1.setAttribute("id", "input1");
+				input1.setAttribute("value", "请输入纯数字");
+				var div = document.getElementById("div1");
+				div.appendChild(input1);
+				var input2 = document.createElement("input");
+				input2.setAttribute("type", "button");
+				input2.setAttribute("value", "点我提交");
+				input2.setAttribute("id", "button2");
+				var div = document.getElementById("div1");
+				div.appendChild(input2);
+				document.getElementById("button2").onclick = function() {
+					fun2()
+				}
+				document.getElementById("input1").onmouseout = function() {
+					fun3()
+				}
+				
+				function fun2() {
+					if(fun3()) {
+						alert("提交后，移除标签，请确认");
+//						var parent = document.getElementById("div1");
+						var child = document.getElementById("input1");
+						var child1 = document.getElementById("button2");
+//						parent.removeChild(child);
+//						parent.removeChild(child1);
+						//通过子类寻找父类标签删除子类标签
+						child.parentNode.removeChild(child);
+						child1.parentNode.removeChild(child1);
+						document.getElementById("button1").disabled = "";
+					} else {
+						document.getElementById("input1").value = "请输入纯数字，谢谢";
+						document.getElementById("input1").style.color = "orange";
+						document.getElementById("input1").style.fontSize = "larger";
+						document.getElementById("input1").style.fontWeight = "bold";
+					}
+				}
+				(function() {
+					document.getElementById("input1").style.color = "red";
+					document.getElementById("input1").style.fontSize = "larger";
+					document.getElementById("input1").style.fontWeight = "bold";
+				})();
+
+				function fun3() {
+					var x = document.getElementById("input1");
+					if(isNaN(x.value)) {
+						x.value = "请您输入纯数字";
+						return false;
+					} else if(x.value.length < 6) {
+						x.value = "请您输入6位以上的数字";
+						return false;
+					} else {
+						var x = 123;
+						alert("输入正确");
+						return true;
+					}
+				}
+				document.getElementById("button1").disabled = "disabled";
+			}
+		</script>
+	</body>
+</html>

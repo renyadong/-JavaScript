@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		input {
+			background-color: lightsalmon;
+			font-family: 'arial black';
+			font-size: x-large;
+			color:crimson;
+			font-weight: bolder;
+			}
+	</style>
+
+	<body background="img/1.jpg">
+		<center>
+			<h1>欢迎来到我的个人网页</h1>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td><input type="button" name="" id="" value="打开百度"  onclick="window.open('http://www.baidu.com')" /></td>
+					<td><input type="button" name="" id="" value="郝美丽专属按钮" onclick="fun()" /></td>
+					<td><input type="button" name="" id="" value="进入淘宝" onclick="window.open('https://www.taobao.com')" /></td>
+					<td><input type="button" name="" id="" value="进入京东" onclick="window.open('https://www.jd.com/?cu=true&utm_source=haosou-search&utm_medium=cpc&utm_campaign=t_262767352_haosousearch&utm_term=5512152820_0_3dbc895ca46044a69d796aeb482c67ab')" /></td>
+					<td><input type="button" name="" id="" value="显示当前日期" onclick="fun1()" /></td>
+					<td><input type="button" name="" id="" value="点击" onclick="fun2()" /></td>
+				</tr>
+			</table>
+		</center>
+	</body>
+	<script type="text/javascript">
+		function fun() {
+			alert("郝美丽你是不是傻。。。。。。。");
+			var aa = 10;
+			alert(++aa);
+			alert(--aa);
+		}
+		function fun1() {
+			var nowYear = new Date().getFullYear();
+			var nowMonth = new Date().getMonth()+1;
+			var nowDay = new Date().getDate();
+			var nowHour = new Date().getHours();
+			var nowMinute = new Date().getMinutes();
+			var nowSecond = new Date().getSeconds();
+			var nowWeekend = new Date().getDay();
+			switch (nowWeekend){
+				case 1:
+				nowWeekend = "星期一";
+					break;
+				case 2:
+				nowWeekend = "星期二";
+					break;
+				case 3:
+				nowWeekend = "星期三";
+					break;
+				case 4:
+				nowWeekend = "星期四";
+					break;
+				case 5:
+				nowWeekend = "星期五";
+					break;
+				case 6:
+				nowWeekend = "星期六";
+					break;
+				default:
+				nowWeekend = "星期日";
+					break;
+			}
+			alert(nowYear+"年"+nowMonth+"月"+nowDay+"日"+" "+nowHour+":"+nowMinute+":"+nowSecond+" "+nowWeekend);
+		}
+		function fun2() {
+			for (var i = 1; i < 7; i++) {
+				document.write("<font color='#DC143C' face='华文琥珀'><h"+i+">张刘贤</h"+i+"></font>");
+				document.write("<br />");
+			}
+			var aa = "bb";
+				document.write(aa.fontcolor("red").fontsize("6").blink());
+				document.write("<br />");
+				document.write(aa.toUpperCase());
+				document.write("<br />");
+		    var bb = "程序学习javaScript";
+		    var cc1=bb.match("javaScript");
+		    var cc2=bb.search("javaScript");
+				document.write(cc1[0]);
+				document.write("<br />");
+				document.write(cc2);
+		}
+	</script>
+</html>
