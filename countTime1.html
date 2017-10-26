@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>吃喝玩乐</title>
+		<script>
+			var c = 0;
+			var t;
+			var timer_is_on = 0;
+
+			function timedCount() {
+				document.getElementById('txt').value = c;
+				c = c + 1;
+				t = setTimeout("timedCount()", 1000);
+				if(c == 11) {
+					clearTimeout(t);
+					setTimeout(function() {
+						document.getElementById('txt').value = "郝丽丽美美哒！";
+					}, 500);
+					setTimeout(function() {
+						var xx = document.getElementById('txt');
+						xx.value = "呵呵，你真有耐心";
+						xx.style.width = "250px";
+						xx.style.color = "orangered";
+						xx.style.fontFamily = "华文行楷";
+						xx.style.fontSize = "x-large";
+						xx.style.fontWeight = "bolder";
+						(function() {
+							var form = document.getElementById("form");
+							var input1 = document.createElement("p");
+							input1.setAttribute("id", "input1");
+							form.appendChild(input1);
+							setTimeout(function() {
+								var x = document.getElementById("input1");
+								x.style.width = "250px";
+								x.innerHTML = "丽丽，谢谢您欣赏！";
+								x.style.color = "red";
+								x.style.fontFamily = "华文行楷";
+								x.style.fontSize = "x-large";
+								x.style.fontWeight = "bolder";
+								setTimeout(function() {
+									var y = document.getElementById("input2");
+									form.removeChild(xx);
+									form.removeChild(y);
+								}, 500);
+								setTimeout(function() {
+									var yy = document.getElementById("p2");
+									yy.innerHTML = "丽，上班辛苦了";
+									yy.style.color = "#FF00FF";
+									yy.style.fontFamily = "华文行楷";
+									yy.style.fontSize = "x-large";
+									yy.style.fontWeight = "bolder";
+								},500);
+							}, 500);
+						})();
+					}, 1000);
+				}
+			}
+
+			function doTimer() {
+				if(!timer_is_on) {
+					timer_is_on = 1;
+					timedCount();
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="" align="center">
+			<form id="form">
+				<input type="button" value="点击等待10s!" onClick="doTimer()" id="input2">
+				<input type="text" id="txt">
+			</form>
+			<p id="p2">点击按钮后，请耐心等待效果</p>
+		</div>
+	</body>
+
+</html>
